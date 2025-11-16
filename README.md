@@ -1,36 +1,131 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📘 Study MVP – AI-Powered Learning Assistant
 
-## Getting Started
+Study MVP is a modern AI-enhanced learning platform built with Next.js.  
+It helps students learn faster and more efficiently by allowing them to upload their own study materials (PDFs, notes, scripts) and turning them into interactive learning experiences powered by Retrieval-Augmented Generation (RAG).
 
-First, run the development server:
+The goal is to launch a **simple but valuable MVP** for real students — fast, focused, and without overengineering.
+
+---
+
+## 🚀 Vision
+
+Students often struggle with scattered PDFs, messy notes, and unstructured study materials. Most learning time is wasted organizing instead of understanding.
+
+**Study MVP solves this by:**
+
+- Centralizing study materials in one place (organized per module/course)
+- Using AI to explain, summarize, and generate learning content
+- Building personalized quizzes and flashcards
+- Providing a chat experience grounded in the student's own documents
+- Tracking progress with motivational gamification (points, progress bars)
+
+The app acts like a smart study coach sitting on top of the student’s actual materials.
+
+---
+
+## ✨ MVP Features
+
+### Core (MVP)
+
+- ✔️ User authentication with **Clerk**
+- ✔️ Protected routes (dashboard, modules)
+- ✔️ Next.js + Tailwind + shadcn/ui setup
+- ✔️ Supabase client configured (database/storage)
+- ⏳ Module creation & management
+- ⏳ Document uploads + parsing
+- ⏳ AI chat using student documents (RAG)
+- ⏳ Quiz generator
+- ⏳ Basic gamification (points + progress bars)
+
+### Phase 2 (post-MVP)
+
+- Flashcard generator
+- Badges, streaks, achievements
+- Leaderboards
+- Advanced file types (DOCX, PPTX, Notion imports)
+- Learning analytics dashboard
+- AI-powered summaries per module
+- Smart study paths & recommendations
+
+---
+
+## 🧱 Tech Stack
+
+- **Framework:** Next.js (App Router, TypeScript)
+- **UI:** Tailwind CSS + shadcn/ui
+- **Auth:** Clerk
+- **Database & Storage:** Supabase
+- **AI / RAG:** Vercel AI SDK
+- **Payments:** Stripe (planned)
+- **Deployment:** Vercel
+
+---
+
+## 📁 Project Structure (simplified)
+
+````txt
+src/
+  app/
+    layout.tsx            # Global layout + ClerkProvider
+    page.tsx              # Landing page
+    dashboard/            # Protected user dashboard
+    modules/              # Module management
+  lib/
+    supabaseClient.ts     # Supabase DB client
+proxy.ts                  # Clerk middleware / route protection
+.env.local                # Environment variables (ignored by git)
+README.md
+
+---
+
+## 🔐 Environment Variables
+
+Create a file named .env.local in the project root:
+
+# Clerk
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_...
+CLERK_SECRET_KEY=sk_test_...
+
+# Supabase
+NEXT_PUBLIC_SUPABASE_URL=https://yourproject.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOi...
+
+# Stripe (later)
+STRIPE_SECRET_KEY=
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
+STRIPE_WEBHOOK_SECRET=
+
+# Local dev URL
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+
+⚠️ Do not commit .env.local – keep it out of Git (ensure it is in .gitignore).
+
+---
+
+## 🧑‍💻 Development Setup
+
+Install dependencies:
+
+```bash
+npm install
+````
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Production build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+Deploy to Vercel:
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+vercel deploy
+```
