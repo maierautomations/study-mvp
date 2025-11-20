@@ -3,7 +3,7 @@
 ## 1. Ziel & Vision
 
 **Ziel**  
-Studierenden eine einfache WebApp bieten, um sich mit ihren eigenen Unterlagen fokussiert auf Prüfungen vorzubereiten – mit KI-generierten Quizfragen und einem Chat, der die Inhalte erklärt.
+Studierenden eine interaktive WebApp bieten, um sich mit ihren eigenen Unterlagen fokussiert auf Prüfungen vorzubereiten – mit KI-generierten Quizfragen und einem Chat, der die Inhalte erklärt.
 
 **Vision (1–2 Jahre)**  
 Der Standard-Lernmodus für Studierende, bevor sie in eine Klausur gehen: Skript hochladen, Fragen beantworten, Verständnis checken, Fortschritt sehen.
